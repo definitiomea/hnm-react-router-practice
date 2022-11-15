@@ -1,42 +1,38 @@
-/* FontAwesomeIcon 컴포넌트는 인라인 요소고,
-로그인이란 영역은 블럭 요소인데 flex로 정렬이 된다?? */
-.login-button {
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px;
-    cursor: pointer;
+.App {
+  text-align: center;
 }
 
-/* flex, 가운데 정렬 */
-.nav-section {
-    display: flex;
-    justify-content: center;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.menu-area {
-    display: flex;
-    justify-content: center;
-}
-.menu-list {
-    display: flex;
-    list-style-type: none;
-    padding-inline-start: 0px;
-}
-.menu-list li {
-    padding: 10px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
-.search-area {
-    border: none;
-    border-bottom: 1px solid black;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.goods:hover {
-    transform: scale(1.2, 1.2);
-    transition-duration: 1s;
+.App-link {
+  color: #61dafb;
 }
 
-.product-img {
-    display: flex;
-    justify-content: flex-end;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
