@@ -19,7 +19,7 @@ const ProductDetail = () => {
 
     const getProductDetail = async () => {
         /* 필요한 경로를 불러주고, 반환받아 json으로 취급하여 사용 */
-        let url = `http://localhost:5000/products/${id}`
+        let url = `https://my-json-server.typicode.com/definitiomea/hnm-react-router-practice/products/${id}`
         let response = await fetch(url);
         let data = await response.json();
         console.log(data);
