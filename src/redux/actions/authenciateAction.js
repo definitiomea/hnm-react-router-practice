@@ -1,14 +1,16 @@
+import { authenciateActions } from "../reducers/authenticateReducer";
+
 function login(id, password) {
     return (dispatch, getState) => {
         console.log("middle");
-        dispatch({type:"LOGIN_SUCCESS", payload: { id, password }});
+        dispatch(authenciateActions.logIn(id, password));
     };
 }
 
 function logout() {
     return (dispatch, getState) => {
         console.log("logout middle");
-        dispatch({type:"LOGOUT_SUCCESS"});
+        dispatch(authenciateActions.logOut());
     }
 }
 

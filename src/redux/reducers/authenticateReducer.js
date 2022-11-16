@@ -1,10 +1,12 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 let initialState = {
     id: "",
     password: "",
     authenciate: false
 };
 
-function authenciateReducer(state = initialState, action) {
+/* function authenciateReducer(state = initialState, action) {
     let { type, payload } = action;
     switch(type) {
         case "LOGIN_SUCCESS":
@@ -28,4 +30,24 @@ function authenciateReducer(state = initialState, action) {
     }
 }
 
-export default authenciateReducer;
+export default authenciateReducer; */
+
+const authenciateSlice = createSlice({
+    name: "authenciate",
+    initialState,
+    reducers: {
+        logIn(state, action) {
+            state.id = action.payload.id
+            state.password = action.payload.password
+            state.authenciate = true;
+        },
+        logOut(state, action) {
+            state.id = ""
+            state.password = ""
+            state.authenciate = false
+        }
+    }
+});
+
+export const authenciateActions = authenciateSlice.actions;
+export default authenciateSlice.reducer;
