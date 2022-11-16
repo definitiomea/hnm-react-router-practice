@@ -52,7 +52,7 @@ const Navbar = () => {
                 </div>
 
                 <div className='nav-section'>
-                    <img width={100} src='https://www2.hm.com/hm-logo.png'></img>
+                    <img width={100} src='https://www2.hm.com/hm-logo.png' onClick={() => navigate("/")}></img>
                 </div>
 
                 <div className='menu-area'>
