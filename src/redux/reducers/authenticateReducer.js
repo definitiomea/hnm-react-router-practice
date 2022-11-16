@@ -15,6 +15,14 @@ function authenciateReducer(state = initialState, action) {
                 password: payload.password,
                 authenciate: true
             }
+        case "LOGOUT_SUCCESS":
+            console.log("logout reducer here");
+            return {
+                ...state,
+                id: "",
+                password: "",
+                authenciate: false
+            }
         default:
             return { ...state }
     }

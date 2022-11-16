@@ -10,6 +10,7 @@ import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './Components/Navbar';
 import PrivateRoute from './route/PrivateRoute';
+import { useSelector } from 'react-redux';
 
 /* 1. 전체 상품 페이지, 로그인, 상품 상세 페이지 만들기
 2. 전체 상품 페이지에서는 전체 상품을 볼 수 있다.
@@ -22,20 +23,24 @@ import PrivateRoute from './route/PrivateRoute';
 7. 상품을 검색할 수 있다. */
 
 function App() {
-   const [authenticate, setAuthenticate] = useState(false);
+  /* const authenticate = useSelector((state) => state.auth.authenticate); */
 
-   useEffect(() => {
+   /* useEffect(() => {
     console.log("AAaa", authenticate)
-   },[authenticate]);
+   },[authenticate]); */
 
   return (
     <div className="App">
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}></Navbar>
+      {/* <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}></Navbar> */}
+      <Navbar></Navbar>
       <Routes>
         {/* 페이지가 세 개 뿐이라고?? */}
-        <Route path='/' element={<ProductAll authenticate={authenticate}></ProductAll>}></Route>
+        <Route path='/' element={<ProductAll></ProductAll>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/product/:id' element={<PrivateRoute></PrivateRoute>}></Route>
+        {/* <Route path='/' element={<ProductAll authenticate={authenticate}></ProductAll>}></Route>
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate}></Login>}></Route>
-        <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate}></PrivateRoute>}></Route>
+        <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate}></PrivateRoute>}></Route> */}
       </Routes>
     </div>
   );

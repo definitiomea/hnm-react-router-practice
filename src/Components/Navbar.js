@@ -3,8 +3,13 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { authenticateAction } from '../redux/actions/authenciateAction';
 
-const Navbar = ({authenticate, setAuthenticate}) => {
+const Navbar = () => {
+    const authenciate = useSelector((state) => state.auth.authenciate);
+    const dispatch = useDispatch();
+
     const menuList = ['여성', 'Divided', "남성", "신생아/유아", 'H&M Home', "Sale", "지속가능성"];
     const navigate = useNavigate();
 
@@ -12,8 +17,8 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         navigate('/login');
     }
 
-    const logOut = () => {
-        setAuthenticate(false);
+    const logout = () => {
+        dispatch(authenticateAction.logout());
         navigate('/');
     }
 
@@ -31,14 +36,14 @@ const Navbar = ({authenticate, setAuthenticate}) => {
 
                 {/* 이렇게 세 영역으로 */}
                 <div>
-                    {authenticate == false ?
+                    {authenciate === false ?
                         <div className='login-button' onClick={ goLogin }>
                             {/* 이렇게 한 컨테이너에 넣어서 다루기 */}
                             <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
                             <div>로그인</div>
                         </div>
                     :
-                        <div className='login-button' onClick={ logOut }>
+                        <div className='login-button' onClick={ logout }>
                             {/* 이렇게 한 컨테이너에 넣어서 다루기 */}
                             <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
                             <div>로그아웃</div>
