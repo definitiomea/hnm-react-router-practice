@@ -11,7 +11,7 @@ const ProductAll = ({authenticate}) => {
     비동기로 움직여야 하므로, 화살표 함수 바로 앞에 async 달기 */
     const getProducts = async () => {
         let searchQuery = query.get('q') || "";
-        let url = `http://localhost:5000/products/?q=${searchQuery}`;
+        let url = `https://my-json-server.typicode.com/definitiomea/hnm-react-router-practice/?q=${searchQuery}`;
         let response = await fetch(url);
         let data = await response.json();
         setProductList(data);
