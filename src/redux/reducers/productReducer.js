@@ -1,5 +1,6 @@
 let initialState = {
-    productList: []
+    productList: [],
+    productDetailList: []
 };
 
 function productReducer(state = initialState, action) {
@@ -9,6 +10,11 @@ function productReducer(state = initialState, action) {
             return {
                 ...state, productList: payload.data
             };
+        case "GET_PRODUCT_DETAIL_SUCCESS":
+            console.log("detail reducer test");
+            return {
+                ...state, productDetailList: payload.data
+            }
         default:
             return { ...state };
     }
