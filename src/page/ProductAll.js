@@ -7,7 +7,7 @@ import { productAction } from "../redux/actions/productAction";
 import ProductCard from "../Components/ProductCard";
 
 const ProductAll = ({authenticate}) => {
-    const productList = useSelector((state) => state.productList);
+    const productList = useSelector((state) => state.product.productList);
     const [query, setQuery] = useSearchParams();
     const dispatch = useDispatch();
 
