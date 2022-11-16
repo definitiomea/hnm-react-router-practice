@@ -8,17 +8,8 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "react-redux": "^8.0.5",
-=======
->>>>>>> parent of 7decdb4 (practice, my-json-server 써보기)
     "react-router-dom": "^6.4.2",
-=======
->>>>>>> parent of d698948 (hnm 프로젝트 업로드)
-=======
->>>>>>> parent of d698948 (hnm 프로젝트 업로드)
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
