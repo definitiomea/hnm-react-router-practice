@@ -16,7 +16,7 @@ const ProductAll = ({authenticate}) => {
 
     const getProducts = async () => {
         let searchQuery = query.get('q') || "";
-        let url = `https://my-json-server.typicode.com/definitiomea/hnm-react-router-practice/?q=${searchQuery}`;
+        let url = `https://my-json-server.typicode.com/definitiomea/hnm-react-router-practice/products/?q=${searchQuery}`;
         let response = await fetch(url);
         let data = await response.json();
         setProductList(data);
