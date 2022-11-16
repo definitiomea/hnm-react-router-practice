@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSearchParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { productAction } from "../redux/actions/productAction";
 import ProductCard from "../Components/ProductCard";
 
 const ProductAll = ({authenticate}) => {
-    const [ productList, setProductList ] = useState([]);
+    const productList = useSelector((state) => state.productList);
     const [query, setQuery] = useSearchParams();
     const dispatch = useDispatch();
 
