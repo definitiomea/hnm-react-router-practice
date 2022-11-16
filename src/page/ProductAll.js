@@ -14,17 +14,12 @@ const ProductAll = ({authenticate}) => {
     /* 모든 제품 정보를 받기 위해서
     비동기로 움직여야 하므로, 화살표 함수 바로 앞에 async 달기 */
 
-    const getProducts = () => {
+    const getProducts = async () => {
         let searchQuery = query.get('q') || "";
-<<<<<<< HEAD
         let url = `https://my-json-server.typicode.com/definitiomea/hnm-react-router-practice/?q=${searchQuery}`;
         let response = await fetch(url);
         let data = await response.json();
         setProductList(data);
-=======
-        /* dispatch - 미들웨어 - 메서드 - 인수 순으로 전달 */
-        dispatch(productAction.getProducts(searchQuery));
->>>>>>> ec9c8ea196734071b49601b16d8133e98ab6d477
     }
 
     /*  확인해보려고 임시로 만든 메서드
